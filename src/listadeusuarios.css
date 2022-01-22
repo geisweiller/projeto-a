@@ -1,0 +1,213 @@
+/* CSS da Lista de Usuários para Pagamento */
+
+#root, body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+.container {
+    background-color: #1F292E;
+    margin-top: 0.063rem;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.thumbnail {
+    border-radius: 5px;
+    margin-right: 1.25rem;
+    width: 80px;
+}
+
+.infos {
+    margin-right: auto;
+}
+
+.backdrop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.botao-pagar {
+    padding: 10px 20px;
+}
+
+button {
+    padding: 10px;
+    font-size: 20px;
+    color: #f5f5f5;
+    font-weight: bold;
+    background-color: #00c8b3;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.name, .username {
+    margin: 0;
+}
+.name {
+    font-size: 24px;
+    color: #ff6500;
+    font-weight: bold;
+}
+.username {
+    font-size: 16px;
+    color: #dddcdc;
+}
+
+/* CSS dos Modals */
+
+.abrirModal {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: 'auto';
+    bottom: 'auto';
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    height: 30%;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    z-index: 2;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.texto-cabecalho-modal {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #1F292E;
+    color: #FFFFFF;
+    padding: 10px 0;
+    max-width: 500px;
+    width: 100vw;
+    margin-top: 0%;
+    align-content: center;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 3;
+} 
+
+.modal-button-cancel {
+    background-color:#eb4a46;
+}
+
+.modal-button-cancel, .modal-button {
+    width: 50%;
+}
+
+.texto-cabecalho-modal span {
+    color: #ff6500;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.abrirModal select {
+    height: 30px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+}
+
+.abrirModal p {
+    text-align: center;
+}
+
+.valorInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.valorInput p {
+    margin: 0;
+    color: #eb4a46;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 412px) and (min-width: 391px) {
+    .thumbnail {
+        width: 75px;
+    }
+
+    .infos p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 390px) and (min-width: 376px) {
+    .thumbnail {
+        width: 75px;
+    }
+
+    .infos p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) and (min-width: 361px) {
+    .thumbnail {
+        width: 75px;
+    }
+
+    .infos p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 360px) and (min-width: 280px) {
+    .thumbnail {
+        width: 60px;
+    }
+
+    .infos p {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+}
