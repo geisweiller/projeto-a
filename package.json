@@ -4,8 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.16.7",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
     "bootstrap": "^5.1.3",
@@ -23,10 +24,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "jest": "jest --env=jsdom",
+    "jest:watch": "jest --env=jsdom --watch",
+    "jest:coverage": "jest --env=jsdom --coverage",
+    "jest:memory": "jest --env=node --logHeapUsage"
   },
   "eslintConfig": {
     "extends": [
+      "universe/web",
       "react-app",
       "react-app/jest"
     ]
@@ -42,5 +48,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "24.9.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-universe": "^4.0.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "prettier": "^2.0.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
