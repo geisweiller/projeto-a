@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, fireEvent, act } from '@testing-library/react';
 import ListaDeUsuarios from './ListaDeUsuarios.jsx';
+import MockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
+const apiMock = new MockAdapter(axios);
 
-jest.mock('axios');
 describe('Lista de Usuários', () => {
   it('should be able to render', () => {
     const page = render(
@@ -65,7 +66,10 @@ describe('Lista de Usuários', () => {
       img: 'https://avatars2.githubusercontent.com/u/174825?v=4',
     }];
     const resp = {data: users};
-    axios.get.mockImplementation(() => Promise.resolve({ status: 200, resp }));
+
+    apiMock.onGet('https://www.mocky.io/v2/5d531c4f2e0000620081ddce').reply(200, {
+      data: users,
+    });
   })
 
   it('should be able to set an input value', () => {

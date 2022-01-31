@@ -7,9 +7,9 @@ import axios from 'axios';
 const ListaDeUsuarios = () => {
     const [infos, setInfos] = useState([])
     useEffect(() => {
-        axios.get('https://www.mocky.io/v2/5d531c4f2e0000620081ddce', {
+      axios.get('https://www.mocky.io/v2/5d531c4f2e0000620081ddce', {
             method: 'GET',
-        })?.then((resposta) => {setInfos(resposta.data)})
+        }).then((resposta) => {setInfos(resposta.data)})    
     }, [])
 
 // Mock com lista de cartões para teste
@@ -76,7 +76,6 @@ const valorInput = (event) => {
     setValorDinheiro(event.target.value);
     setValidarCampo("none");
 }
-
 
 // Renderizando na tela as informações recebidas da API 
     return (
