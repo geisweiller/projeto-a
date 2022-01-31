@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import NumberFormat from 'react-number-format';
 import './listadeusuarios.css';
 import axios from 'axios';
-
+import Users from './components/Users/Users';
 //Pegando as informações da API pelo GET
 const ListaDeUsuarios = () => {
     const [infos, setInfos] = useState([])
+
     useEffect(() => {
       axios.get('https://www.mocky.io/v2/5d531c4f2e0000620081ddce', {
             method: 'GET',
@@ -81,18 +82,7 @@ const valorInput = (event) => {
     return (
         <>
            <div className='backdrop' style={{opacity: abrirPagamento === 'none' ? 1 : 0.2 }}>
-            {infos.map(item => (
-                <div className="container" key={item.index}>
-                    <div className="content">
-                        <img className="thumbnail" src={item.img} alt="Foto do usuário" />
-                        <div className="infos">   
-                            <p className='name'>{item.name}</p>
-                            <p className='username'>{item.username}</p>
-                        </div>
-                        <button className="botao-pagar" onClick={()=>{abrirModalPagar(item.name)}}>Pagar</button>
-                    </div>
-                </div>
-            ))}
+            <Users users={infos} onButtonClick={abrirModalPagar}/>
             </div>
          
 
