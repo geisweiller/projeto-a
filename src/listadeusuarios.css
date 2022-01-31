@@ -166,6 +166,12 @@ button:hover {
     font-size: 10px;
 }
 
+b {
+    font-weight: bold;
+    color: #eb4a46;
+    text-transform: uppercase;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 412px) and (min-width: 391px) {

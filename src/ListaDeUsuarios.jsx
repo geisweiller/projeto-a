@@ -121,4 +121,4 @@ const valorInput = (event) => {
     )
 }
 
-export default ListaDeUsuarios
+export default ListaDeUsuarios;
